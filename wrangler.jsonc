@@ -1,17 +1,61 @@
 {
+  "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "repsec",
+  "main": "worker/index.ts",
   "account_id": "650ac88275027e21109b5a1872ca9ecc",
   "compatibility_date": "2026-09-15",
+  "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "preview_urls": true,
   "routes": [
     { "pattern": "repsec.ai", "custom_domain": true },
-    { "pattern": "www.repsec.ai", "custom_domain": true }
+    { "pattern": "www.repsec.ai", "custom_domain": true },
+    { "pattern": "app.repsec.ai", "custom_domain": true }
   ],
   "assets": {
-    "directory": "./public"
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "not_found_handling": "none"
   },
   "observability": {
     "enabled": true
+  },
+  "vars": {
+    "APP_URL": "https://app.repsec.ai",
+    "MARKETING_URL": "https://repsec.ai",
+    "ALLOWED_OPERATOR_EMAILS": "almog@klarivo.ai,almog@repsec.ai"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "repsec",
+      "database_id": "1ef73d2e-84b6-4fba-bf13-1ac4d512f387",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "queues": {
+    "producers": [
+      { "binding": "COLLECT", "queue": "repsec-collect" },
+      { "binding": "CLASSIFY", "queue": "repsec-classify" }
+    ],
+    "consumers": [
+      { "queue": "repsec-collect", "max_batch_size": 1, "max_retries": 3 },
+      { "queue": "repsec-classify", "max_batch_size": 5, "max_retries": 3 }
+    ]
+  },
+  "workflows": [
+    {
+      "name": "repsec-brand-run",
+      "binding": "BRAND_RUN",
+      "class_name": "BrandRunWorkflow"
+    }
+  ],
+  "triggers": {
+    "crons": ["0 */6 * * *"]
+  },
+  "ai": {
+    "binding": "AI",
+    "remote": true
   }
 }

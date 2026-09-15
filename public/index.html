@@ -3,36 +3,185 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coming soon</title>
+    <title>RepSec — Reputation Security</title>
+    <meta
+      name="description"
+      content="RepSec applies security discipline to brand presence: define the perimeter, monitor it, classify threats, and respond. The loss event is not lower traffic. It is a name that cannot be trusted."
+    />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      :root {
+        --bg: #090909;
+        --fg: #f3f1ea;
+        --muted: #8b877c;
+        --line: #26251f;
+        --accent: #c45c26;
       }
-
-      html,
+      * { box-sizing: border-box; }
+      html, body { margin: 0; background: var(--bg); color: var(--fg); }
       body {
-        height: 100%;
-      }
-
-      body {
-        display: grid;
-        place-items: center;
-        background: #000;
-        color: #fff;
         font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
       }
-
-      h1 {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        font-weight: 400;
-        letter-spacing: 0.08em;
+      a { color: inherit; }
+      header, main, footer { width: min(920px, calc(100% - 40px)); margin: 0 auto; }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 28px 0;
+        letter-spacing: 0.12em;
         text-transform: lowercase;
+        font-size: 13px;
+      }
+      header a { text-decoration: none; color: var(--muted); }
+      h1 {
+        font-size: clamp(32px, 6vw, 56px);
+        font-weight: 500;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+        margin: 48px 0 20px;
+      }
+      .lede { font-size: 18px; max-width: 62ch; color: var(--muted); margin-bottom: 48px; }
+      h2 {
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 48px 0 16px;
+        font-weight: 500;
+      }
+      p { max-width: 68ch; }
+      .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 28px; }
+      .grid article { border-top: 1px solid var(--line); padding-top: 14px; }
+      .grid h3 { margin: 0 0 8px; font-size: 16px; font-weight: 500; }
+      .grid p { margin: 0; color: var(--muted); font-size: 14px; }
+      .stack { display: grid; gap: 10px; max-width: 420px; }
+      input, textarea, button { font: inherit; color: inherit; background: transparent; }
+      input, textarea {
+        border: 1px solid var(--line);
+        padding: 10px 12px;
+        width: 100%;
+      }
+      textarea { min-height: 90px; resize: vertical; }
+      button {
+        border: 1px solid var(--fg);
+        padding: 10px 14px;
+        cursor: pointer;
+        width: fit-content;
+      }
+      .fine { color: var(--muted); font-size: 13px; }
+      footer { border-top: 1px solid var(--line); margin-top: 80px; padding: 24px 0 48px; color: var(--muted); font-size: 13px; }
+      @media (max-width: 720px) {
+        .grid { grid-template-columns: 1fr; }
+        h1 { margin-top: 24px; }
       }
     </style>
   </head>
   <body>
-    <h1>coming soon</h1>
+    <header>
+      <div>repsec</div>
+      <a href="/app/">Client login</a>
+    </header>
+    <main>
+      <h1>Reputation is a security problem.</h1>
+      <p class="lede">
+        Companies spend seven figures defending their infrastructure and almost nothing defending their name,
+        even though the name is the asset every customer, investor, regulator, and now every AI model actually
+        transacts on. RepSec applies the security discipline to brand presence: define the perimeter, monitor it
+        continuously, classify what shows up as a threat, and respond with force.
+      </p>
+
+      <h2>The perimeter</h2>
+      <p>
+        It is not a website. It is the branded SERP, Reddit and niche forums, G2 / Trustpilot / Glassdoor / app
+        stores, YouTube, X / TikTok / LinkedIn, news and syndicated wire copy, Wikipedia, marketplaces, look-alike
+        domains and impersonation accounts — and above all the answer layer: ChatGPT, Gemini, Perplexity, Copilot,
+        AI Overviews. Those compress every other source into a single verdict on whether a brand is legitimate,
+        safe, overpriced, or a scam. Almost all of that surface is writable by strangers. None of it is owned by
+        the brand. That is the exposure.
+      </p>
+
+      <h2>Four threat buckets</h2>
+      <div class="grid">
+        <article>
+          <h3>Impersonation and fraud</h3>
+          <p>Typosquatted domains, fake support handles, counterfeit listings, phishing that borrows the brand’s equity to steal from its own customers.</p>
+        </article>
+        <article>
+          <h3>Organic negative content</h3>
+          <p>The viral complaint thread, the ex-employee post, the three-year-old lawsuit write-up that outranks the homepage on the company’s own name.</p>
+        </article>
+        <article>
+          <h3>Coordinated attack</h3>
+          <p>Review bombing, brigading, competitor-funded smears, SEO-driven “X alternatives” pages built to convert a rival’s branded traffic.</p>
+        </article>
+        <article>
+          <h3>Machine-layer distortion</h3>
+          <p>Models stating a resolved dispute as current, reciting a competitor’s comparison table as neutral fact, or hallucinating outright.</p>
+        </article>
+      </div>
+
+      <h2>Response: remove, displace, occupy</h2>
+      <p>
+        <strong>Remove</strong> is the legal-adjacent lane: registrar and platform abuse escalations, trademark and
+        DMCA action, marketplace and app-store takedowns, de-indexing, structured handoff to counsel.
+        <strong>Displace</strong> handles what cannot be removed — most of it — by ranking owned properties, earned
+        press, profiles, and structured entity data until the first screen on the brand’s own name belongs to the brand.
+        <strong>Occupy</strong> is the AI layer. There is no position two in an answer engine. The only lever is the
+        input set the models cite: Reddit threads, review corpora, comparison content, documentation, listicles,
+        citation-grade references. Correct and seed there so the generated answer changes downstream.
+      </p>
+      <p>
+        Sitting on top of all three: narrative and crisis ops — playbooks, holding statements, review velocity,
+        and enough standing community presence that the brand has credibility on day one of an incident.
+      </p>
+
+      <h2>What the client gets</h2>
+      <p>
+        A baseline audit and risk map. Continuous monitoring with alerting and defined response SLAs. A committed
+        monthly remediation throughput. Scoring that treats reputation as a measurable security posture: branded
+        SERP control, sentiment, share of voice, AI answer accuracy, open-threat count, time-to-resolution.
+      </p>
+      <p>
+        RepSec is not a marketing line item. It is a risk line item — legal, comms, and security budgets — because
+        the loss event is not lower traffic. It is a fraudulent domain draining customers, a procurement committee
+        reading a smear during diligence, or an AI telling ten thousand buyers a month that the company cannot be trusted.
+      </p>
+
+      <h2>Request a baseline audit</h2>
+      <form id="audit-form" class="stack">
+        <input type="email" name="email" required placeholder="Work email" />
+        <input type="text" name="brand_name" required placeholder="Brand name" />
+        <input type="text" name="domain" placeholder="Primary domain" />
+        <textarea name="note" placeholder="What are you seeing, or worried about?"></textarea>
+        <button type="submit">Request the audit</button>
+        <p class="fine" id="audit-status" hidden></p>
+      </form>
+    </main>
+    <footer>RepSec — Reputation Security</footer>
+    <script>
+      const form = document.getElementById("audit-form");
+      const status = document.getElementById("audit-status");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        status.hidden = false;
+        status.textContent = "Sending…";
+        try {
+          const res = await fetch("/api/public/audit-request", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+          status.textContent = res.ok
+            ? "Received. We will follow up with a perimeter map."
+            : "Could not send. Email almog@klarivo.ai.";
+          if (res.ok) form.reset();
+        } catch {
+          status.textContent = "Could not send. Email almog@klarivo.ai.";
+        }
+      });
+    </script>
   </body>
 </html>
