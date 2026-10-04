@@ -1,0 +1,35 @@
+KLARIVO DIRECTORY RECHECK SUMMARY
+2026-10-04 09:13 IDT
+=================================
+
+LIVE LISTINGS STATUS:
+---------------------
+✓ ToolIndex (strategic-flow-audit.replit.app) - Unable to verify (Replit host)
+✓ AISO (aisotools.com/tool/klarivo) - HTTP 200 ✓ CONFIRMED LIVE
+✗ FreeStartupListing - Not rechecked (no specific URL provided)
+✓ Viesearch (viesearch.com/29160/klarivo) - HTTP 200 ✓ CONFIRMED LIVE
+✓ Tiny Startups (tinystartups.com/startup/klarivo) - HTTP 200 ✓ CONFIRMED LIVE
+✓ RankmyAI (rankmyai.com/tools/.../klarivo) - HTTP 200 ✓ CONFIRMED LIVE
+
+LIVE COUNT: 5 confirmed, 0 flipped down
+
+PENDING LISTINGS STATUS:
+-----------------------
+⏳ aimarketing.directory/tools/klarivo - HTTP 404 (Still PENDING or removed)
+⏳ mraitools.com/tools/klarivo/ - HTTP 404 (Still PENDING or removed)
+✗ topai.tools/tools/klarivo - Cloudflare 403 (Cannot verify)
+✗ insidr.ai/?s=klarivo - HTTP 200 but search results (Still PENDING)
+✗ aitoolnet.com/klarivo - Cloudflare 403 (Cannot verify)
+✗ aitrendr.com/ai-tools/klarivo/ - HTTP 200 but needs manual check
+✗ thenextai.com/ai-tools/klarivo/ - HTTP 200 but needs manual check
+⏳ theagenticaiindex.com - No Klarivo match found on main page
+⏳ aitools.inc/tools/klarivo - HTTP 200 but needs manual verification
+
+PENDING COUNT: 10 open, 0 flipped to live this cycle
+
+FLIPS THIS CYCLE: None
+
+NOTES:
+- Several directories (topai.tools, aitoolnet.com) use Cloudflare bot protection
+- HTTP 404s on mraitools and aimarketing may indicate rejection or URL change
+- HTTP 200s don't always mean live listing; need to verify "Klarivo" text in body
