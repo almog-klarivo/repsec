@@ -1,0 +1,14 @@
+DOFOLLOW.TOOLS STATUS
+2026-10-04 09:13 IDT
+=====================
+
+STANDING POLICY: SKIP (documented)
+
+REASON:
+- Free tier requires account creation + footer badge on company website
+- Paid tier ($9.99) removes badge requirement
+- Policy: Do not create accounts or make payments
+
+DECISION: Skip per instructions
+
+ALTERNATIVE ACTION: None required (standing skip)
